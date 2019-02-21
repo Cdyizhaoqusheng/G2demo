@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import G2 from '@antv/g2';
 
-
+const label = {
+  textStyle: {
+    textAlign: 'center', // 文本对齐方向，可取值为： start center end
+    fill: '#404040', // 文本的颜色
+    fontSize: '18', // 文本大小
+  }
+}
 class App extends Component {
 
   state = {
@@ -21,12 +27,13 @@ class App extends Component {
     chart.scale('value', {
       min: 0,
     });
+    
     chart.scale('year', {
       range: [0, 1],
     });
-    // chart.axis('value', {
-    //   label: null,
-    // });
+    chart.axis('value', {
+      label: label,
+    });
     chart.axis('year', { //清除x轴样式
       label: null,
       tickLine: null
@@ -37,7 +44,7 @@ class App extends Component {
         type: 'line'
       }
     });
-    chart.line().position('year*value');
+    chart.line().position('year*value').shape('smooth');
 
 
  
