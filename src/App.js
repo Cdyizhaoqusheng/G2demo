@@ -4,7 +4,7 @@ import G2 from '@antv/g2';
 
 const label = {
   textStyle: {
-    textAlign: 'center', // 文本对齐方向，可取值为： start center end
+    textAlign: 'center',
     fill: '#404040', // 文本的颜色
     fontSize: '18', // 文本大小
   }
